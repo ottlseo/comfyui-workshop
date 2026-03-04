@@ -1,50 +1,52 @@
-# #5. Comfy-pilot 데모 (Optional)
+# #5. Demos - Comfypilot
 
 > 이 섹션은 선택 사항입니다.
 
 ## Comfy-pilot이란?
 
-Comfy-pilot은 ComfyUI 워크플로우를 프로그래밍 방식으로 관리하고 실행할 수 있는 도구입니다.
+**Comfy Pilot**은 Claude Code와 ComfyUI를 연결하는 **MCP 서버 + 내장 터미널** 커스텀 노드입니다. ComfyUI 안에서 자연어로 워크플로우를 생성/편집/실행할 수 있게 해줍니다.
 
-ComfyUI의 워크플로우를 API로 호출하거나, 배치 처리, 자동화된 파이프라인 구성 등을 지원합니다.
+**핵심 기능:**
 
-## 주요 기능
+* **MCP 서버**: Claude Code가 워크플로우를 직접 조회, 편집, 실행
+* **내장 터미널**: ComfyUI 안에 xterm.js 기반 Claude Code 터미널 탑재
+* **이미지 뷰잉**: Claude가 Preview/Save Image 노드의 출력을 직접 확인
+* **그래프 편집**: 노드 생성/삭제/이동/연결을 프로그래밍 방식으로 처리
+* **모델 다운로드**: HuggingFace, CivitAI에서 모델 직접 다운로드
 
-1. **워크플로우 API 호출**: ComfyUI 워크플로우를 REST API로 실행
-2. **배치 처리**: 여러 프롬프트나 이미지를 일괄 처리
-3. **파이프라인 자동화**: 여러 워크플로우를 연결하여 자동화된 생성 파이프라인 구성
-4. **결과 관리**: 생성된 이미지/비디오의 체계적인 관리
+**사용 예시:**
 
-## 데모 시나리오
+* "SDXL + ControlNet 워크플로우 만들어줘"
+* "프리뷰 이미지 보고 디테일 높여줘"
+* "FLUX schnell 모델 다운받고 워크플로우 세팅해줘"
 
-### 시나리오 1: 프롬프트 배치 처리
+***
 
-여러 프롬프트를 준비하고 한 번에 이미지를 생성하는 데모입니다.
+#### 설치 방법
 
-```python
-# 예시: 여러 프롬프트로 이미지 일괄 생성
-prompts = [
-    "a serene mountain landscape at sunset",
-    "a futuristic city skyline at night",
-    "a cozy coffee shop interior, warm lighting"
-]
+**방법 1 - CLI (권장):**
 
-for prompt in prompts:
-    result = comfy_pilot.run_workflow(
-        workflow="text-to-image",
-        prompt=prompt
-    )
+```bash
+comfy node install comfy-pilot
 ```
 
-### 시나리오 2: 워크플로우 체이닝
+**방법 2 - ComfyUI Manager:**
 
-이미지 생성 → 업스케일링 → 스타일 변환을 자동으로 연결하는 데모입니다.
+1. ComfyUI에서 **Manager** → **Install Custom Nodes** 클릭
+2. `Comfy Pilot` 검색
+3. **Install** 클릭
+4. ComfyUI 재시작
 
+**방법 3 - Git Clone:**
+
+```bash
+cd ~/Documents/ComfyUI/custom_nodes && git clone https://github.com/ConstantineB6/comfy-pilot.git
 ```
-[Text-to-Image] → [Upscaler] → [Style Transfer] → [Output]
-```
 
-## 참고 자료
+> Claude Code CLI가 없으면 자동 설치됩니다.
 
-- 데모는 워크샵 진행자가 라이브로 시연합니다
-- 상세한 사용법은 프로젝트 문서를 참고하세요
+
+
+## 데모
+
+{% embed url="https://private-user-images.githubusercontent.com/90444271/550379895-325b1194-2334-48a1-94c3-86effd1fef02.mp4?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NzI2MDYyNzUsIm5iZiI6MTc3MjYwNTk3NSwicGF0aCI6Ii85MDQ0NDI3MS81NTAzNzk4OTUtMzI1YjExOTQtMjMzNC00OGExLTk0YzMtODZlZmZkMWZlZjAyLm1wND9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNjAzMDQlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjYwMzA0VDA2MzI1NVomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTRkMTA0MzdkNzM0MDgzNTAyOGJjZWZjZWYzM2RlOTU4ODdlYjg4ZTRlYTRiODdkMmJhMWIyMGQ2NDRkZDgyY2ImWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.Mo34xMUkIWVYGsFz9arsQyEhK9RY6SEp7t66avS73Lo" %}

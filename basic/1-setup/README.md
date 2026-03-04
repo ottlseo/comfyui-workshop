@@ -1,4 +1,4 @@
-# 1. Setup - ECS 기반 ComfyUI 설치
+# #1-1. Setup
 
 ## AWS CDK를 이용한 ComfyUI on ECS 배포
 
@@ -61,7 +61,7 @@ ComfyUI Manager는 커스텀 노드와 모델을 쉽게 관리할 수 있는 필
 
 ComfyUI 인터페이스 우측의 **Manager** 버튼을 클릭합니다.
 
-![Manager 버튼](../.gitbook/assets/image&#32;(78).png)
+![Manager 버튼](<../../.gitbook/assets/image (78).png>)
 
 ### Custom Nodes Manager
 
@@ -72,7 +72,7 @@ Custom Nodes Manager를 통해 다양한 커스텀 노드를 검색하고 설치
 3. **Install** 버튼 클릭
 4. ComfyUI 재시작
 
-![Custom Nodes Manager](../.gitbook/assets/image&#32;(79).png)
+![Custom Nodes Manager](<../../.gitbook/assets/image (79).png>)
 
 ### Model Manager
 
@@ -83,7 +83,7 @@ Model Manager를 통해 필요한 모델을 직접 다운로드하고 관리할 
 3. 원하는 모델 검색
 4. **Download** 버튼 클릭
 
-![Model Manager](../.gitbook/assets/image&#32;(80).png)
+![Model Manager](<../../.gitbook/assets/image (80).png>)
 
 ## 모델 경로 관리
 
@@ -91,11 +91,11 @@ Model Manager를 통해 필요한 모델을 직접 다운로드하고 관리할 
 
 이 배포 아키텍처는 EFS(Elastic File System)를 사용하여 모델을 영구적으로 저장합니다:
 
-- 모델 기본 경로: `/workspace/models/`
-- Checkpoints: `/workspace/models/checkpoints/`
-- VAE: `/workspace/models/vae/`
-- LoRA: `/workspace/models/loras/`
-- Embeddings: `/workspace/models/embeddings/`
+* 모델 기본 경로: `/workspace/models/`
+* Checkpoints: `/workspace/models/checkpoints/`
+* VAE: `/workspace/models/vae/`
+* LoRA: `/workspace/models/loras/`
+* Embeddings: `/workspace/models/embeddings/`
 
 EFS를 사용하므로 컨테이너가 재시작되어도 다운로드한 모델이 유지됩니다.
 
@@ -110,11 +110,11 @@ EFS를 사용하므로 컨테이너가 재시작되어도 다운로드한 모델
 3. **ComfyUI-Crystools** 찾아서 Install 클릭
 4. ComfyUI 재시작
 
-![Crystools 검색](../.gitbook/assets/image&#32;(81).png)
+![Crystools 검색](<../../.gitbook/assets/image (81).png>)
 
 설치 후 우측 패널에 CPU, 메모리, GPU 사용률이 표시됩니다.
 
-![리소스 모니터](../.gitbook/assets/image&#32;(82).png)
+![리소스 모니터](<../../.gitbook/assets/image (82).png>)
 
 ### ComfyUI-Model-Manager
 
@@ -125,11 +125,11 @@ EFS를 사용하므로 컨테이너가 재시작되어도 다운로드한 모델
 3. **ComfyUI-Model-Manager** 찾아서 Install 클릭
 4. ComfyUI 재시작
 
-![Model Manager 설치](../.gitbook/assets/image&#32;(83).png)
+![Model Manager 설치](<../../.gitbook/assets/image (83).png>)
 
 설치 후 노드 추가 메뉴에서 Model Manager 관련 노드를 사용할 수 있습니다.
 
-![Model Manager 노드](../.gitbook/assets/image&#32;(84).png)
+![Model Manager 노드](<../../.gitbook/assets/image (84).png>)
 
 ## 다음 단계
 
