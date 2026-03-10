@@ -67,7 +67,7 @@
 
 아래 영상은 Comfy-pilot을 활용하여 자연어로 워크플로우를 생성하는 과정을 보여줍니다.
 
-{% embed url="../../.gitbook/assets/comfy-pilot-demo.mp4" %}
+{% embed url="https://github.com/cheolmin/comfyui-workshop/raw/main/.gitbook/assets/comfy-pilot-demo.mp4" %}
 
 ***
 
